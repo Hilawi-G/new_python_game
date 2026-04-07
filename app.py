@@ -36,10 +36,14 @@ ball.goto(0,0)
 
 
 def paddle_a_up():
-    paddle_a.goto(-350,0)
+    y= paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
 
+# keyboard binding
 
-
+wn.listen()
+wn.onkeypress(paddle_a_up, "up")
 
 while True:
     wn.update()
